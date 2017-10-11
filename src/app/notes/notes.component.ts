@@ -37,11 +37,16 @@ export class NotesComponent implements OnInit {
     let note:Note = {
       id: newId,
       title: title.value,
-      body: body.value
+      body: body.value,
+      fav: false
     }
     this.ns.addNote(note);
     title.value = '';
     body.value = '';
+  }
+
+  switchFav(i, newFav){
+    this.ns.switchFav(i, newFav);
   }
 
 }

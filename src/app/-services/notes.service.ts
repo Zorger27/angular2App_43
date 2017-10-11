@@ -16,5 +16,9 @@ export class NotesService {
   addNote(note: Note){
     NOTES.push(note);
   }
+
+  switchFav(i, newFav){
+    NOTES[i].fav = newFav;
+  }
   
 }

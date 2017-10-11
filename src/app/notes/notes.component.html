@@ -22,6 +22,7 @@
           <th>ID</th>
           <th>Title</th>
           <th>Body</th>
+          <th>Fav</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -30,6 +31,10 @@
           <td>{{note.id}}</td>
           <td>{{note.title}}</td>
           <td>{{note.body}}</td>
+          <td>
+            <!-- <button (click)="switchFav(i, !note.fav)" class="btn btn-success">{{note.fav}}</button> -->
+            <fav (switchigFav)="switchFav(i, $event)" [isFav]="note.fav"></fav>
+          </td>
           <td>
             <button (click)="rmNote(i)" class="btn btn-danger">Remove</button>
           </td>
