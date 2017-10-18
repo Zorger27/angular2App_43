@@ -1,0 +1,6 @@
+<h1 *ngIf="load">LOADING...</h1>
+<div *ngIf="!load" class="user-data">
+    <h2>{{user.id}}</h2>
+    <h1>{{user.username}}</h1>
+    <h3>{{user.email}}</h3>
+</div>

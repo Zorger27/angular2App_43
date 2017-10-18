@@ -1,0 +1,25 @@
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+  <h1 *ngIf="load">LOADING ...</h1>
+  <table *ngIf="!load" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index">
+        <td>{{user.id}}</td>
+        <td>
+          <a routerLink="/users/{{user.id}}">{{user.name}}</a>
+        </td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
