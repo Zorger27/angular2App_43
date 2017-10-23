@@ -1,0 +1,8 @@
+<div class="colors">
+  <div
+    *ngFor="let color of colors"
+    class="colors__item {{color}}"
+    [class.colors__item--isChosen]="activeColor === color"
+    (click)="changeColor(color)"
+  ></div>
+</div>

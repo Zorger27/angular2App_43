@@ -20,5 +20,9 @@ export class NotesService {
   switchFav(i, newFav){
     NOTES[i].fav = newFav;
   }
+
+  switchColor(i, newColor){
+    NOTES[i].color = newColor;
+  }
   
 }

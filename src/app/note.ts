@@ -3,4 +3,5 @@ export class Note {
     title: string;
     body: string;
     fav: boolean;
+    color: string;
 }

@@ -8,6 +8,8 @@
           <label for="bodyInput">Body</label>
           <textarea #newNoteBody type="text" class="form-control" id="bodyInput" placeholder="Body" rows="3"></textarea>
         </div>
+        <change-color (changingColor)="setColor($event)"></change-color>
+        <br>
         <button class="btn btn-info btn-block" (click)="addNote(newNoteTitle, newNoteBody)">Add note</button>
     </div>
 </div>
@@ -23,17 +25,21 @@
           <th>Title</th>
           <th>Body</th>
           <th>Fav</th>
+          <th>Colors</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let note of notes; let i = index">
-          <td>{{note.id}}</td>
+        <tr *ngFor="let note of notes; let i = index" >
+          <td class="{{note.color}}">{{note.id}}</td>
           <td>{{note.title}}</td>
           <td>{{note.body}}</td>
           <td>
             <!-- <button (click)="switchFav(i, !note.fav)" class="btn btn-success">{{note.fav}}</button> -->
             <fav (switchigFav)="switchFav(i, $event)" [isFav]="note.fav"></fav>
+          </td>
+          <td>
+            <change-color (changingColor)="switchColor(i, $event)" [activeColor]="note.color"></change-color>
           </td>
           <td>
             <button (click)="rmNote(i)" class="btn btn-danger">Remove</button>
@@ -43,3 +49,23 @@
     </table>
   </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

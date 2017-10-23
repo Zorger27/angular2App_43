@@ -22,6 +22,7 @@ export class NotesComponent implements OnInit {
   // title:any = 'SOME TYPE';
 
   notes = this.ns.getNotes();
+  color = 'red';
   
   ngOnInit() {
 
@@ -31,6 +32,10 @@ export class NotesComponent implements OnInit {
     this.ns.rmNote(i);
   }
 
+  setColor(newColor){
+    this.color = newColor;
+  }
+
   addNote(title, body){
     let lastIndex = this.ns.getNotes().length-1;
     let newId = this.notes[lastIndex].id + 1;
@@ -38,7 +43,8 @@ export class NotesComponent implements OnInit {
       id: newId,
       title: title.value,
       body: body.value,
-      fav: false
+      fav: false,
+      color: this.color
     }
     this.ns.addNote(note);
     title.value = '';
@@ -46,7 +52,12 @@ export class NotesComponent implements OnInit {
   }
 
   switchFav(i, newFav){
+    
     this.ns.switchFav(i, newFav);
+  }
+
+  switchColor(i, newColor){
+    this.ns.switchColor(i, newColor);
   }
 
 }

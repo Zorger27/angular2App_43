@@ -10,6 +10,7 @@ import { HelloComponent } from './hello/hello.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
+import { ChangeColorComponent } from './change-color/change-color.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UserComponent } from './user/user.component';
     HelloComponent,
     NavbarComponent,
     UsersComponent,
-    UserComponent
+    UserComponent,
+    ChangeColorComponent
   ],
   imports: [
     BrowserModule,
